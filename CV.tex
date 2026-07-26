@@ -1,0 +1,126 @@
+% Compile in terminal by running:
+% latexmk -C CV.tex # Wipes all the cached build files
+% latexmk -pdf CV.tex
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% ModernCV themes
+\moderncvstyle{banking} % options: 'casual', 'classic', 'banking', 'oldstyle'
+\moderncvcolor{blue}    % options: 'blue', 'orange', 'green', 'red', 'purple', 'grey', 'black'
+
+% Encoding & geometry
+\usepackage[utf8]{inputenc} % ignored by XeLaTeX but harmless
+\usepackage[scale=0.92]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+% Fonts
+\renewcommand{\familydefault}{\sfdefault} % use sans serif font
+
+% Compact item lists
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+%----------------------------------------------------------------------------------
+% Personal data
+\firstname{}
+\familyname{Ankit Mukherjee, MSc}
+\address{Barrackpore, Kolkata - 700120}{West Bengal, India}
+\phone[mobile]{+91 9330111538}
+\email{ankit0204.am@gmail.com}
+\social[linkedin]{ankit-mukherjee-647ab81ba}
+\social[github]{AnkitMukherji}
+
+%----------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+%----------------------------------------------------------------------------------
+\section{Summary}
+\cvitem{}{Computational biologist with research experience spanning \textbf{population genomics, pharmacogenomics, transcriptomics, and viral evolution}. My work focuses on leveraging large-scale genomic and transcriptomic datasets to understand \textbf{human genetic diversity, disease mechanisms, and precision medicine}. At CSIR--Institute of Genomics and Integrative Biology, I have contributed to the GenomeIndia Project through the characterization of clinically actionable pharmacogenomic variation across diverse Indian populations, development of genomic resources, and transcriptomic analysis of Friedreich Ataxia disease models. My long-term research interests lie in integrating computational genomics with molecular biology to investigate disease biology, gene regulation, and complex human disorders.}
+
+%----------------------------------------------------------------------------------
+\section{Education}
+\cventry{2022--2024}{MSc in Bioinformatics (DBT funded)}{Savitribai Phule Pune University}{Pune}{}{Grade: \textbf{9.93/10}}
+\cventry{2019--2022}{BSc in Microbiology}{University of Calcutta}{Kolkata}{}{Grade: \textbf{9.03/10}}
+\cventry{2018--2019}{Higher Secondary (Class XII, Science)}{St. Augustine's Day School}{Barrackpore}{}{Percentage: \textbf{95.5\%}}
+\cventry{2016--2017}{Secondary (Class X)}{St. Augustine's Day School}{Barrackpore}{}{Percentage: \textbf{92.4\%}}
+
+%----------------------------------------------------------------------------------
+\section{Research Experience}
+\cventry{2025--Present}{Transcriptomics of Friedreich Ataxia}{CSIR--Institute of Genomics and Integrative Biology}{Delhi}{}{
+\begin{itemize}
+\item Investigating transcriptomic alterations underlying \textbf{Friedreich Ataxia (FRDA)} using both patient blood RNA-seq datasets and induced pluripotent stem cell (iPSC)-derived cardiomyocyte models.
+\item Performed differential expression and pathway enrichment analyses to identify blood-based transcriptomic biomarkers associated with disease severity, with the long-term objective of developing non-invasive molecular markers for patient stratification and disease monitoring.
+\item Designed reproducible RNA-seq analysis pipelines involving quality assessment, normalization, batch-effect correction, differential expression analysis and functional enrichment using \textbf{Bioconductor, DESeq2, limma and custom R workflows}.
+\item Currently investigating transcriptional remodeling during differentiation of \textbf{Day 15 and Day 52 iPSC-derived cardiomyocytes} from Friedreich Ataxia patients to understand molecular mechanisms contributing to progressive cardiomyopathy, the leading cause of mortality in FRDA.
+\end{itemize}}
+\vspace{0.5em}
+
+\cventry{2024--2026}{Pharmacogenomics and Medical Relevance of Indian Populations}{CSIR--Institute of Genomics and Integrative Biology (GenomeIndia Project)}{Delhi}{}{
+\begin{itemize}
+\item Investigating the \textbf{landscape of clinically actionable pharmacogenomic variation} across the Indian population by integrating whole-genome sequencing data from \textbf{10,000 individuals representing 83 genetically diverse populations}.
+\item Curated and harmonized pharmacogenomic evidence from \textbf{PharmGKB, CPIC, PharmVar, ClinPGx} and additional clinical resources to identify actionable SNPs, indels and star alleles relevant for precision medicine.
+\item Characterized \textbf{population-specific pharmacogenomic variation}, quantified inter-population allele frequency differences, and compared Indian populations with global reference datasets to identify \textbf{ancestry-specific therapeutic implications}.
+\item Performed comprehensive analyses of pharmacogenes including clinically important star alleles and metabolizer phenotypes to evaluate \textbf{differences in predicted drug response among Indian populations}.
+\item Developed computational pipelines in \textbf{R, Python and Bash} for large-scale variant annotation, quality control, population-level analyses, visualization and statistical interpretation.
+\end{itemize}}
+\vspace{0.5em}
+
+\cventry{2023--2024}{Master’s Thesis}{National Centre for Cell Science (NCCS)}{Pune}{}{
+\begin{itemize}
+\item Analyzed \textbf{viral genomes} to identify amino acid substitutions under positive selection, revealing sites of rapid evolution.
+\item Constructed custom \textbf{substitution matrices} based on the PAM algorithm and compared them to standard \textbf{PAM matrices} to identify amino acid mutations under selection pressure.
+\item Mapped key mutations onto protein structures, demonstrating a \textbf{non-random} distribution of substitutions localized to specific functional regions that facilitate the host-pathogen evolutionary arms race.
+\end{itemize}}
+\vspace{0.5em}
+
+\cventry{2023}{Summer Research}{National Centre for Cell Science (NCCS)}{Pune}{}{
+\begin{itemize}
+\item Characterized the impact of ethnicity-related SARS-CoV-2 SNPs on glycosylating proteins to unravel their role in modulating viral susceptibility across diverse populations.
+\item Performed \textbf{docking} analyses to assess how specific SNPs influence infection susceptibility, demonstrating a direct link between genetic variation and viral binding.
+\end{itemize}}
+
+%----------------------------------------------------------------------------------
+\section{Research Resources}
+
+\cvitem{GI-DB}{Contributing author of \textbf{GI-DB (GenomeIndia Database)}, a publicly accessible genomic resource cataloguing genetic variation from \textbf{10,000 whole genomes representing 83 Indian populations}. Contributed to large-scale variant processing, quality assessment, annotation and population-level analyses supporting the development of a national reference database for Indian genomic variation.\\
+\textbf{Database:} \href{https://ibdc.dbt.gov.in/gidb/}{ibdc.dbt.gov.in/gidb}}
+%----------------------------------------------------------------------------------
+
+\section{Publications}
+\begin{itemize}
+\item Bhattacharyya, C., Subramanian, K., Uppili, B., ..., \textbf{Mukherjee, A.}, et al. (2025). \textit{Mapping Genetic Diversity with the GenomeIndia Project}. \textit{Nature Genetics}, 57, 767--773.
+\href{https://doi.org/10.1038/s41588-025-02153-x}{DOI:10.1038/s41588-025-02153-x}
+
+\vspace{0.3em}
+
+\item Subramanian, K., Bhattacharyya, C., \textbf{Mukherjee, A.}, \textit{et al.} (2026). \textit{An Atlas of Indian Genetic Diversity}. \textit{medRxiv}. Preprint.
+\href{https://doi.org/10.64898/2026.03.20.26348801}{DOI:10.64898/2026.03.20.26348801}
+\end{itemize}
+
+%----------------------------------------------------------------------------------
+\section{Skills}
+\cvitem{Programming \& Scripting}{Python (NumPy, Pandas), R (Tidyverse, Bioconductor, ggplot2), Shell (awk, sed), Perl}
+\cvitem{NGS \& Genomics}{Variant Calling (GATK, BCFtools), RNA-seq (Kallisto, DESeq2, Seurat, Scanpy), Genome/Exome Assembly, Functional Annotation}
+\cvitem{Computational Tools}{High-Performance Computing (HPC, SLURM), Version Control (Git), Containerization (Docker, Singularity)}
+\cvitem{Research \& Soft Skills}{Scientific Communication, Data Visualization, Problem Solving, Collaborative Research}
+
+%----------------------------------------------------------------------------------
+\section{Achievements}
+\cvitem{}{First Prize -- Best e-Poster Presentation, Indian Ataxia Conclave, for presenting research on transcriptomic biomarkers in Friedreich Ataxia.}
+\cvitem{}{Qualified DBT-BET 2024 (Category-II, 214 marks)}
+\cvitem{}{AIR 51 -- Graduate Aptitude Test in Biotechnology (GAT-B 2022)}
+\cvitem{}{AIR 192 -- IIT-JAM Biotechnology 2022}
+\cvitem{}{Qualified TIFR GS 2022 (Biology stream)}
+\cvitem{}{Best Student Award -- BSc Microbiology, Calcutta University}
+
+%----------------------------------------------------------------------------------
+\section{Languages}
+\cvdoubleitem{English}{Professional proficiency}{Hindi}{Professional proficiency}
+\cvitem{Bengali}{Native}
+
+%----------------------------------------------------------------------------------
+\nopagenumbers % no page numbers for CV
+
+\end{document}
+
