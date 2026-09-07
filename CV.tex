@@ -1,3 +1,7 @@
+% Compile in terminal by running:
+% latexmk -C CV.tex # Wipes all the cached build files
+% latexmk -pdf CV.tex
+
 \documentclass[10pt,a4paper]{article}
 
 %----------------------------------------------------------------------------------
@@ -35,22 +39,24 @@
   [\vspace{0.15em}\color{rulecolor}\titlerule]
 
 \titlespacing*{\section}
-  {0pt}{0.8em}{0.45em}
+  {0pt}{1em}{0.6em}
 
 % Compact but breathable lists
 \setlist[itemize]{
     leftmargin=1.25em,
-    itemsep=0.18em,
-    topsep=0.15em,
+    itemsep=0.2em,
+    topsep=0.2em,
     parsep=0em,
-    partopsep=0em
+    partopsep=0em,
+    after=\vspace{0.4em} % Adds consistent space after lists
 }
 
 \setlist[enumerate]{
     leftmargin=1.45em,
     itemsep=0.4em,
-    topsep=0.15em,
-    parsep=0em
+    topsep=0.2em,
+    parsep=0em,
+    after=\vspace{0.4em}
 }
 
 %----------------------------------------------------------------------------------
@@ -58,19 +64,16 @@
 %----------------------------------------------------------------------------------
 
 \newcommand{\entry}[4]{
-    \textbf{#1} \hfill \textbf{#2}\\
-    \textit{#3} \hfill #4
-    \vspace{0.2em}
+    \noindent\textbf{#1} \hfill \textbf{#2}\\
+    \textit{#3} \hfill #4\vspace{0.3em}\par
 }
 
 \newcommand{\project}[1]{
-    \vspace{0.3em}
-    \textbf{\textit{#1}}
-    \vspace{0.05em}
+    \noindent\textbf{\textit{#1}}\vspace{0.1em}\par
 }
 
 \newcommand{\skill}[2]{
-    \textbf{#1:} #2\\[0.12em]
+    \noindent\textbf{#1:} #2\vspace{0.25em}\par
 }
 
 %----------------------------------------------------------------------------------
@@ -103,10 +106,12 @@ Barrackpore, Kolkata, West Bengal, India
 \href{https://www.linkedin.com/in/ankit-mukherjee-647ab81ba/}{LinkedIn}
 \quad | \quad
 \href{https://github.com/AnkitMukherji}{GitHub}
+\quad | \quad
+\href{https://orcid.org/0009-0005-5847-5986}{ORCiD}
 
 \end{center}
 
-\vspace{0.25em}
+\vspace{0.4em}
 
 %==================================================================================
 % RESEARCH INTERESTS
@@ -117,8 +122,6 @@ Barrackpore, Kolkata, West Bengal, India
 Computational Genomics \textbullet\ Population Genomics \textbullet\ Human Genetic Variation
 \textbullet\ Pharmacogenomics \textbullet\ Transcriptomics \textbullet\ Functional Genomics
 \textbullet\ Disease Biology \textbullet\ Precision Medicine \textbullet\ Statistical Genomics
-
-\vspace{0.15em}
 
 %==================================================================================
 % EDUCATION
@@ -132,15 +135,11 @@ Computational Genomics \textbullet\ Population Genomics \textbullet\ Human Genet
 {Savitribai Phule Pune University, Pune}
 {CGPA: \textbf{9.93/10}}
 
-\vspace{0.15em}
-
 \entry
 {BSc in Microbiology}
 {2019--2022}
 {University of Calcutta, Kolkata}
 {CGPA: \textbf{9.03/10}}
-
-\vspace{0.15em}
 
 %==================================================================================
 % RESEARCH EXPERIENCE
@@ -154,86 +153,40 @@ Computational Genomics \textbullet\ Population Genomics \textbullet\ Human Genet
 {CSIR--Institute of Genomics and Integrative Biology (CSIR--IGIB), Delhi}
 {}
 
-%----------------------------------------------------------------------------------
 \project{Population Pharmacogenomics and Precision Medicine -- GenomeIndia Project}
-
 \begin{itemize}
-
 \item Investigating the landscape of \textbf{clinically actionable pharmacogenomic variation} across the Indian population using whole-genome sequencing data from \textbf{10,000 individuals representing 83 genetically diverse Indian populations}.
-
 \item Curated and harmonized pharmacogenomic evidence from \textbf{PharmGKB, CPIC, PharmVar, and ClinPGx} to identify clinically actionable SNPs, indels, and star alleles relevant to drug response.
-
 \item Characterized \textbf{population-specific allele-frequency variation} across Indian populations and compared pharmacogenomic profiles with global populations to identify differences with potential implications for precision medicine.
-
 \item Analyzed clinically important pharmacogenes and star-allele haplotypes to infer \textbf{drug metabolizer phenotypes}, identifying population groups with potentially altered responses to commonly prescribed therapeutics.
-
 \end{itemize}
 
-\vspace{0.8em}
-
-%----------------------------------------------------------------------------------
-\project{GenomeIndia Database (GI-DB)}
-
+\project{GenomeIndia Database (GI-DB): \href{https://ibdc.dbt.gov.in/gidb/}{ibdc.dbt.gov.in/gidb/}}
 \begin{itemize}
-
 \item Contributing author to \textbf{GI-DB}, a publicly accessible genomic database cataloguing genetic variation identified from \textbf{10,000 whole genomes representing 83 Indian populations}.
-
 \item Contributed to large-scale \textbf{variant processing, quality assessment, normalization, functional annotation and population-level analyses} supporting the construction of a comprehensive Indian genomic variation resource.
-
 \end{itemize}
 
-\vspace{0.15em}
-
-\textbf{Database:}
-\href{https://ibdc.dbt.gov.in/gidb/}{ibdc.dbt.gov.in/gidb/}
-
-\vspace{0.8em}
-
-%----------------------------------------------------------------------------------
 \project{Blood Transcriptomics and Disease Progression in Friedreich Ataxia}
-
 \begin{itemize}
-
 \item Investigating the \textbf{blood transcriptomic landscape of Friedreich Ataxia (FRDA)} to identify molecular signatures associated with disease state and clinical severity.
-
 \item Analyzing RNA-seq data from FRDA patients and controls to identify \textbf{differentially expressed genes and dysregulated biological pathways} associated with disease progression.
-
 \item Integrating transcriptomic profiles with clinical severity measures to investigate relationships between molecular changes and the \textbf{phenotypic heterogeneity of FRDA}.
-
 \end{itemize}
 
-\vspace{0.8em}
-
-%----------------------------------------------------------------------------------
 \project{iPSC-derived Cardiomyocyte Transcriptomics in Friedreich Ataxia}
-
 \begin{itemize}
-
 \item Investigating the molecular basis of \textbf{FRDA-associated cardiomyopathy} using iPSC-derived cardiomyocyte models, addressing a major disease manifestation and cause of mortality in FRDA.
-
 \item Analyzing transcriptomic profiles across \textbf{Day 15 and Day 52 cardiomyocyte differentiation stages} to characterize transcriptional remodeling during cardiomyocyte maturation and disease progression.
-
 \item Comparing cardiomyopathic and non-cardiomyopathic FRDA models to identify molecular pathways associated with the transition from \textbf{FXN deficiency to cardiac pathology}.
-
 \item Investigating stage-specific transcriptional programs to identify candidate pathways associated with \textbf{cardiac dysfunction and disease heterogeneity}.
-
 \end{itemize}
 
-\vspace{0.8em}
-
-%----------------------------------------------------------------------------------
 \project{Research Mentorship}
-
 \begin{itemize}
-
-\item Formally mentored a BTech student on the research project
-\textbf{``Haplotype Diversity and Shared Ancestry of the Sickle Cell Mutation (rs334) in Global Populations''}, providing guidance on population-genetic analysis, haplotype diversity, shared ancestry and interpretation of global allele-frequency patterns.
-
+\item Formally mentored a BTech student on the research project \textbf{``Haplotype Diversity and Shared Ancestry of the Sickle Cell Mutation (rs334) in Global Populations''}, providing guidance on population-genetic analysis, haplotype diversity, shared ancestry and interpretation of global allele-frequency patterns.
 \item Guided the student through computational analysis, interpretation of population-genetic results and scientific presentation of the research findings.
-
 \end{itemize}
-
-\vspace{0.8em}
 
 %----------------------------------------------------------------------------------
 % MSc THESIS
@@ -246,16 +199,10 @@ Computational Genomics \textbullet\ Population Genomics \textbullet\ Human Genet
 {}
 
 \project{Computational Analysis of Viral Protein Evolution}
-
 \begin{itemize}
-
 \item Investigated \textbf{positive selection in viral proteins} to identify amino-acid substitutions associated with evolution and potential functional adaptation.
-
 \item Developed custom amino-acid substitution matrices based on the \textbf{PAM framework} and mapped candidate substitutions onto protein structures to investigate their functional context.
-
 \end{itemize}
-
-\vspace{0.8em}
 
 %----------------------------------------------------------------------------------
 % SUMMER RESEARCH
@@ -268,14 +215,9 @@ Computational Genomics \textbullet\ Population Genomics \textbullet\ Human Genet
 {}
 
 \project{Population-associated SARS-CoV-2 Genetic Variation}
-
 \begin{itemize}
-
 \item Investigated population-associated SARS-CoV-2 variants and their potential structural and functional consequences using sequence analysis and \textbf{molecular docking}.
-
 \end{itemize}
-
-\vspace{0.15em}
 
 %==================================================================================
 % PUBLICATIONS
@@ -284,40 +226,15 @@ Computational Genomics \textbullet\ Population Genomics \textbullet\ Human Genet
 \section{Publications}
 
 \begin{enumerate}
+\item Subramanian, K., Bhattacharyya, C., \textbf{Mukherjee, A\textsuperscript{*}}, \textit{et al.} (2026). \textit{An Atlas of Indian Genetic Diversity}. \textbf{medRxiv}. Preprint. \href{https://doi.org/10.64898/2026.03.20.26348801}{DOI: 10.64898/2026.03.20.26348801}
 
-\item
-Subramanian, K., Bhattacharyya, C., \textbf{Mukherjee, A\textsuperscript{*}}, \textit{et al.}
-(2026).
-\textit{An Atlas of Indian Genetic Diversity}.
-\textbf{medRxiv}.
-Preprint.
-\href{https://doi.org/10.64898/2026.03.20.26348801}
-{DOI: 10.64898/2026.03.20.26348801}
+\item Mondal, D., Bhattacharyya, C., \textbf{Mukherjee, A.}, \textit{et al.} (2026). \textit{Capturing India’s phenotypic diversity: Health insights from the GenomeIndia project}. \textbf{medRxiv}. Preprint. \href{https://doi.org/10.64898/2026.04.01.26349926}{DOI: 10.64898/2026.04.01.26349926}
 
-\item
-Mondal, D., Bhattacharyya, C., \textbf{Mukherjee, A.}, \textit{et al.}
-(2026).
-\textit{Capturing India’s phenotypic diversity: Health insights from the GenomeIndia project}.
-\textbf{medRxiv}.
-Preprint.
-\href{https://doi.org/10.64898/2026.04.01.26349926}
-{DOI: 10.64898/2026.04.01.26349926}
-
-\item
-Bhattacharyya, C., Subramanian, K., Uppili, B., \textbf{Mukherjee, A.}, \textit{et al.}
-(2025).
-\textit{Mapping Genetic Diversity with the GenomeIndia Project}.
-\textbf{Nature Genetics}, 57, 767--773.
-\href{https://doi.org/10.1038/s41588-025-02153-x}
-{DOI: 10.1038/s41588-025-02153-x}
-
+\item Bhattacharyya, C., Subramanian, K., Uppili, B., \textbf{Mukherjee, A.}, \textit{et al.} (2025). \textit{Mapping Genetic Diversity with the GenomeIndia Project}. \textbf{Nature Genetics}, 57, 767--773. \href{https://doi.org/10.1038/s41588-025-02153-x}{DOI: 10.1038/s41588-025-02153-x}
 \end{enumerate}
 
-\vspace{0.05em}
-
 \textit{\textsuperscript{*}Equal first authorship. Ankit Mukherjee is bolded throughout.}
-
-\vspace{0.15em}
+\vspace{0.4em}
 
 %==================================================================================
 % AWARDS
@@ -326,22 +243,13 @@ Bhattacharyya, C., Subramanian, K., Uppili, B., \textbf{Mukherjee, A.}, \textit{
 \section{Awards \& Academic Distinctions}
 
 \begin{itemize}
-
 \item \textbf{First Prize -- Best e-Poster Presentation}, Indian Ataxia Conclave 2026, for research on transcriptomic signatures and disease progression in Friedreich Ataxia.
-
 \item \textbf{DBT-BET 2024 -- Category II}, qualified with 214 marks.
-
 \item \textbf{All India Rank 51 -- GAT-B 2022}, Graduate Aptitude Test in Biotechnology.
-
 \item \textbf{All India Rank 192 -- IIT-JAM Biotechnology 2022}.
-
 \item \textbf{Qualified -- TIFR Graduate School Examination 2022}, Biology stream.
-
 \item \textbf{Best Student Award -- BSc Microbiology}, University of Calcutta.
-
 \end{itemize}
-
-\vspace{0.15em}
 
 %==================================================================================
 % TECHNICAL EXPERTISE
@@ -349,34 +257,22 @@ Bhattacharyya, C., Subramanian, K., Uppili, B., \textbf{Mukherjee, A.}, \textit{
 
 \section{Technical Expertise}
 
-\skill{Programming \& Statistical Computing}
-{Python (NumPy, Pandas) \textbullet\ R (Tidyverse, Bioconductor, ggplot2) \textbullet\ Bash/Shell (awk, sed) \textbullet\ Perl}
-
-\skill{Population \& Medical Genomics}
-{Population genomics \textbullet\ Pharmacogenomics \textbullet\ GWAS \textbullet\ Variant prioritization \textbullet\ Functional annotation}
-
-\skill{Transcriptomics \& Functional Genomics}
-{Bulk RNA-seq analysis \textbullet\ Single-cell RNA-seq analysis \textbullet\ Gene-set and pathway enrichment \textbullet\ Gene co-expression analysis (WGCNA)}
-
-\skill{Computational Infrastructure}
-{HPC \textbullet\ SLURM \textbullet\ Git/GitHub \textbullet\ Conda/Bioconda \textbullet\ Docker \textbullet\ Singularity}
+\skill{Programming \& Statistical Computing}{Python (NumPy, Pandas) \textbullet\ R (Tidyverse, Bioconductor, ggplot2) \textbullet\ Bash/Shell (awk, sed) \textbullet\ Perl}
+\skill{Population \& Medical Genomics}{Population genomics \textbullet\ Pharmacogenomics \textbullet\ GWAS \textbullet\ Variant prioritization \textbullet\ Functional annotation}
+\skill{Transcriptomics \& Functional Genomics}{Bulk RNA-seq analysis \textbullet\ Single-cell RNA-seq analysis \textbullet\ Gene-set and pathway enrichment \textbullet\ Gene co-expression analysis (WGCNA)}
+\skill{Computational Infrastructure}{HPC \textbullet\ SLURM \textbullet\ Git/GitHub \textbullet\ Conda/Bioconda \textbullet\ Docker \textbullet\ Singularity}
 
 %==================================================================================
-% CONFERENCES & SCIENTIFIC PRESENTATIONS
+% CONFERENCES & PRESENTATIONS
 %==================================================================================
 
-\section{Conferences \& Scientific Presentations}
+\section{Conferences \& Presentations}
 
 \begin{itemize}
-
-\item \textbf{Genomics India Conference 2026} -- \textbf{Accepted poster presentation}: 
-\textit{``Landscape of Clinically Actionable Pharmacogenomic Variation Across Diverse Indian Populations from the GenomeIndia Project.''}
-
-\item \textbf{Indian Ataxia Conclave 2026} -- Presented research on \textbf{blood transcriptomics and molecular signatures associated with Friedreich Ataxia disease severity}; awarded \textbf{First Prize for Best e-Poster Presentation}.
-
+\item \textbf{Genomics India Conference 2026}. Presented a poster titled \textit{``Landscape of Clinically Actionable Pharmacogenomic Variation Across Diverse Indian Populations from the GenomeIndia Project.''}
+\item \textbf{Workshop on AI-driven Multi-Omics}, jointly organized by \textbf{Indian Institute of Science (IISc)} and \textbf{IIT Madras}, held in conjunction with the Genomics India Conference 2026, Bengaluru.
+\item \textbf{Indian Ataxia Conclave 2026}. Presented research on \textbf{blood transcriptomics and molecular signatures associated with Friedreich Ataxia disease severity}; awarded the \textbf{First Prize for Best e-Poster Presentation}.
 \end{itemize}
-
-\vspace{0.15em}
 
 %==================================================================================
 % LANGUAGES
@@ -384,12 +280,6 @@ Bhattacharyya, C., Subramanian, K., Uppili, B., \textbf{Mukherjee, A.}, \textit{
 
 \section{Languages}
 
-\textbf{English:} Professional proficiency
-\quad
-\textbf{Hindi:} Professional proficiency
-\quad
-\textbf{Bengali:} Native
-
-%==================================================================================
+\textbf{English:} Professional proficiency \quad \textbf{Hindi:} Professional proficiency \quad \textbf{Bengali:} Native
 
 \end{document}
